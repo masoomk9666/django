@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saad Ali — Portfolio</title>
+  <meta name="description" content="Saad Ali — Senior Website Developer | WordPress & Technical SEO | Portfolio" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f13;
+      --card:#0f1620;
+      --muted:#9aa6b2;
+      --accent:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.04);
+      --success: #39d98a;
+      --radius: 14px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, rgba(12,16,20,1) 0%, rgba(8,10,12,1) 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      font-size:16px;
+    }
+
+    /* Container */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px;
+    }
+
+    /* Header (nav) */
+    header{
+      position:sticky;
+      top:12px;
+      z-index:50;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:10px 16px;
+      border-radius:12px;
+      margin-bottom:18px;
+      box-shadow: 0 6px 18px rgba(2,6,12,0.6);
+      backdrop-filter: blur(6px);
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#45d7ff);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#071022;
+      box-shadow: 0 6px 18px rgba(124,92,255,0.18);
+    }
+    nav a{
+      color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600;font-size:14px;
+    }
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:32px;
+      align-items:center;
+      margin:28px 0 46px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg,var(--card), rgba(10,14,18,0.6));
+      padding:30px;
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(2,6,12,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .hero h1{
+      font-size:34px;margin:0 0 6px;
+      letter-spacing:-0.6px;
+    }
+    .hero .subtitle{color:var(--muted);margin-bottom:18px}
+    .hero .cta{
+      display:flex;gap:12px;flex-wrap:wrap;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#45d7ff);
+      color:#071022;padding:12px 16px;border-radius:12px;font-weight:700;border:none;cursor:pointer;
+      box-shadow: 0 6px 18px rgba(124,92,255,0.14);
+    }
+    .btn.ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);
+      padding:11px 14px;border-radius:12px;
+    }
+
+    .hero-meta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .meta-item{
+      background:var(--glass);padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);
+      font-size:13px;
+    }
+
+    .hero-photo{
+      display:flex;align-items:center;justify-content:center;
+    }
+    .photo-wrap{
+      width:260px;height:260px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 18px 40px rgba(2,6,12,0.7);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Sections */
+    section.card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border-radius: var(--radius);
+      padding:22px;
+      margin-bottom:22px;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(2,6,12,0.45);
+    }
+    .section-title{
+      display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;
+    }
+    .section-title h2{margin:0;font-size:18px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+    .about p{color:var(--muted);margin-top:8px}
+
+    /* Skills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{
+      background:var(--glass-2);padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);font-size:14px;
+    }
+    .skill .level{display:inline-block;margin-left:8px;font-weight:700;color:var(--accent)}
+
+    /* Portfolio grid */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+      display:flex;gap:12px;align-items:center;
+    }
+    .project .img{width:90px;height:72px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .project .img img{width:100%;height:100%;object-fit:cover}
+    .project h4{margin:0;font-size:15px}
+    .project p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    /* Experience & Education */
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .t-item{padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .t-item small{color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+    .testimonial{
+      min-width:280px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03)
+    }
+    .testimonial p{color:var(--muted);font-size:14px;margin:8px 0 0}
+    .stars{color:var(--accent);font-weight:800}
+
+    /* Blog preview */
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .post{
+      padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)
+    }
+    .post h5{margin:4px 0 0;font-size:14px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    form label{display:block;font-size:14px;margin-bottom:6px;color:var(--muted)}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:inherit;font-size:14px;resize:vertical;
+    }
+    .small{font-size:13px;color:var(--muted);margin-top:8px}
+
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .posts{grid-template-columns:1fr 1fr}
+      .container{padding:16px}
+      header{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+    @media (max-width:560px){
+      .posts{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+      .photo-wrap{width:200px;height:200px}
+      .hero-card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header data-aos="fade-down">
+      <div class="brand">
+        <div class="logo">SA</div>
+        <div>
+          <div style="font-weight:800">Saad Ali</div>
+          <div style="font-size:12px;color:var(--muted)">Senior Website Developer • WordPress & Technical SEO</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation" >
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-card" data-aos="fade-right">
+        <h1>Saad Ali</h1>
+        <p class="subtitle">Senior Website Developer • WordPress, Elementor, On-Page & Technical SEO</p>
+
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <div class="cta">
+            <button class="btn" id="downloadResume">Download CV</button>
+            <a class="btn ghost" href="#contact">Hire me</a>
+          </div>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-item">Location: Pakistan</div>
+          <div class="meta-item">Experience: 2+ years</div>
+          <div class="meta-item">Availability: Freelance / Full-time</div>
+        </div>
+
+        <div style="margin-top:18px" data-aos="fade-up" data-aos-delay="200">
+          <strong>Quick intro</strong>
+          <p class="muted" style="margin:8px 0 0">
+            I'm Saad — I build high-converting websites and custom WordPress themes, optimize on-page SEO, and integrate front-end animations (GSAP, FullPage.js) to create engaging user experiences. I also develop mobile apps (Android) and have launched startups: <em>The Craft Universe</em> and <em>Tour4You</em>.
+          </p>
+        </div>
+      </div>
+
+      <aside class="hero-photo" data-aos="fade-left" data-aos-delay="120">
+        <div class="photo-wrap" title="Replace with your photo">
+          <!-- Replace this src with your real photo -->
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4b516b4f18b03fef3f6f8b8e0b5a3ec7" alt="Saad Ali">
+        </div>
+      </aside>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <div class="muted">BS Software Engineering • CGPA 3.79/4</div>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <p class="muted">
+            I’m a Senior Website Developer currently working at <strong>Softcrust</strong>. I build responsive websites, custom WordPress themes, and performant front-end experiences. My strengths: WordPress (Elementor & custom themes), on-page & technical SEO, JavaScript (vanilla & frameworks), PHP, and Python.
+          </p>
+
+          <p class="muted" style="margin-top:12px">
+            Notable projects include <strong>Tour4You</strong> (Android app for tourists), <strong>Desert Adventure</strong> (client site focused on Dubai desert experiences), and multiple WooCommerce & real estate integrations. I enjoy optimizing UX while keeping SEO and performance top of mind.
+          </p>
+
+          <div style="margin-top:12px">
+            <strong>Awards & Scholarships</strong>
+            <p class="muted" style="margin-top:6px">Received 5 merit-based scholarships during my bachelor’s and multiple academic honors (top positions in semesters).</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="padding:14px">
+            <h3 style="margin:0 0 8px">Contact</h3>
+            <div class="muted" style="margin-bottom:8px">Email: <a href="mailto:saad@example.com" style="color:var(--accent);text-decoration:none">saad@example.com</a></div>
+            <div class="muted">Phone: +92 300 0000000</div>
+            <div class="muted" style="margin-top:10px">Find me: <a href="#" style="color:var(--accent)">GitHub</a> • <a href="#" style="color:var(--accent)">LinkedIn</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <div class="muted">Technical & Tools</div>
+      </div>
+
+      <div class="skills" style="margin-bottom:12px">
+        <div class="skill">WordPress <span class="level">Expert</span></div>
+        <div class="skill">Elementor</div>
+        <div class="skill">Slider Revolution</div>
+        <div class="skill">Custom WordPress Themes</div>
+        <div class="skill">On-Page & Technical SEO</div>
+        <div class="skill">HTML • CSS • JavaScript</div>
+        <div class="skill">GSAP • FullPage.js</div>
+        <div class="skill">React • Next.js</div>
+        <div class="skill">PHP • MySQL</div>
+        <div class="skill">Python • Data Structures</div>
+        <div class="skill">WooCommerce</div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div class="meta-item">Available for remote work</div>
+        <div class="meta-item">Open to full-time</div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Portfolio / Projects</h2>
+        <div class="muted">Selected work • case studies available on request</div>
+      </div>
+
+      <div class="projects">
+        <article class="project" data-aos="zoom-in">
+          <div class="img"><img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=800&auto=format&fit=crop" alt="Tour4You"></div>
+          <div>
+            <h4>Tour4You (Android App)</h4>
+            <p class="muted">Tourism app with hotel booking, transport, maps & tour packages. Final year project & live app.</p>
+          </div>
+        </article>
+
+        <article class="project" data-aos="zoom-in" data-aos-delay="80">
+          <div class="img"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800&auto=format&fit=crop" alt="Desert Adventure"></div>
+          <div>
+            <h4>Desert Adventure (Client)</h4>
+            <p class="muted">Client website focused on Dubai desert experiences — custom booking UI & SEO optimization.</p>
+          </div>
+        </article>
+
+        <article class="project" data-aos="zoom-in" data-aos-delay="160">
+          <div class="img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Banana Corp"></div>
+          <div>
+            <h4>Banana Corp (Company Site)</h4>
+            <p class="muted">Simple WordPress site for an IT company specializing in apps, websites & custom software development.</p>
+          </div>
+        </article>
+
+        <article class="project" data-aos="zoom-in" data-aos-delay="240">
+          <div class="img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="WooCommerce"></div>
+          <div>
+            <h4>WooCommerce & CRM Integration</h4>
+            <p class="muted">Built backend features to create orders, integrate with Qobrix CRM, and customize product flows.</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:12px;text-align:right">
+        <a href="#" class="btn ghost">View full portfolio</a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Experience & Education</h2>
+        <div class="muted">Timeline</div>
+      </div>
+
+      <div class="timeline">
+        <div class="t-item" data-aos="fade-up">
+          <strong>Senior Website Developer — Softcrust</strong>
+          <div class="muted"><small>Present • Web development, on-page SEO, project lead</small></div>
+        </div>
+
+        <div class="t-item" data-aos="fade-up" data-aos-delay="60">
+          <strong>Freelance WordPress Developer</strong>
+          <div class="muted"><small>2019–Present • Custom themes, Elementor, WooCommerce</small></div>
+        </div>
+
+        <div class="t-item" data-aos="fade-up" data-aos-delay="120">
+          <strong>Founder — The Craft Universe & Tour4You</strong>
+          <div class="muted"><small>2022–Present • E-commerce product launches & Android app</small></div>
+        </div>
+
+        <div class="t-item" data-aos="fade-up" data-aos-delay="180">
+          <strong>BS Software Engineering — University</strong>
+          <div class="muted"><small>CGPA: 3.79/4</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Testimonials</h2>
+        <div class="muted">What clients & peers say</div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial" data-aos="flip-left">
+          <strong>Amir — CEO</strong>
+          <div class="stars">★★★★★</div>
+          <p>"Saad delivered a polished site, fast turnaround, and improved our search traffic through technical SEO fixes."</p>
+        </div>
+
+        <div class="testimonial" data-aos="flip-left" data-aos-delay="80">
+          <strong>Layla — Product Manager</strong>
+          <div class="stars">★★★★★</div>
+          <p>"Excellent communicator and very detail-oriented. Implemented GSAP animations that elevated our UI."</p>
+        </div>
+
+        <div class="testimonial" data-aos="flip-left" data-aos-delay="160">
+          <strong>Client — Desert Adventure</strong>
+          <div class="stars">★★★★★</div>
+          <p>"Booking conversions improved after Saad's redesign and SEO work."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section id="blog" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Blog preview</h2>
+        <div class="muted">Latest posts</div>
+      </div>
+
+      <div class="posts">
+        <article class="post" data-aos="fade-up">
+          <small class="muted">Aug 10, 2025</small>
+          <h5>How to Optimize WordPress Performance (Checklist)</h5>
+          <p class="muted" style="margin-top:6px">A practical checklist to speed up your WordPress site and improve SEO rankings.</p>
+        </article>
+
+        <article class="post" data-aos="fade-up" data-aos-delay="80">
+          <small class="muted">Jul 02, 2025</small>
+          <h5>Using GSAP for Subtle Micro-Interactions</h5>
+          <p class="muted" style="margin-top:6px">How to add performant animations that don't hurt UX or SEO.</p>
+        </article>
+
+        <article class="post" data-aos="fade-up" data-aos-delay="160">
+          <small class="muted">May 20, 2025</small>
+          <h5>Building a Simple WooCommerce Order Creator</h5>
+          <p class="muted" style="margin-top:6px">Backend patterns and UI suggestions for creating orders in admin quickly.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <div class="muted">Let's work together — send a message</div>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <form id="contactForm" onsubmit="return handleFormSubmit(event)">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+
+            <label for="email" style="margin-top:10px">Email</label>
+            <input id="email" type="email" placeholder="your@email.com" required>
+
+            <label for="message" style="margin-top:10px">Message</label>
+            <textarea id="message" rows="6" placeholder="Brief project description..." required></textarea>
+
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+              <button class="btn" type="submit">Send message</button>
+              <div id="formStatus" class="small" aria-live="polite"></div>
+            </div>
+          </form>
+
+          <p class="small" style="margin-top:12px">Prefer email? <a href="mailto:saad@example.com" style="color:var(--accent)">saad@example.com</a></p>
+        </div>
+
+        <aside style="padding:12px;background:var(--glass);border-radius:10px">
+          <h4 style="margin:0 0 6px">Other ways to connect</h4>
+          <div class="muted" style="margin-bottom:8px">LinkedIn • GitHub • Dribbble (links)</div>
+
+          <h5 style="margin:10px 0 6px">Services I offer</h5>
+          <ul class="muted" style="margin:0 0 0 18px">
+            <li>Full WordPress site & theme development</li>
+            <li>On-page & technical SEO audits</li>
+            <li>Web performance & accessibility improvements</li>
+            <li>Animations (GSAP) & interactive pages</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Saad Ali — Built with HTML, CSS & JS • <span class="muted">Dark Theme</span>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="" crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-quart',
+      once: true
+    });
+
+    // GSAP subtle hero entrance
+    gsap.from(".logo", {y:-10, opacity:0, duration:0.8, delay:0.1});
+    gsap.from(".hero-card", {x:-20, opacity:0, duration:0.9, delay:0.15});
+    gsap.from(".photo-wrap", {scale:0.96, opacity:0, duration:0.9, delay:0.2});
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a, a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || !href.startsWith('#')) return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target) {
+          const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
+          gsap.to(window, {duration:0.7, scrollTo: top, ease: 'power2.out'});
+        }
+      })
+    });
+
+    // Simple contact form handler: validates and opens mailto fallback
+    function handleFormSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('formStatus');
+
+      if(!name || !email || !message){
+        status.textContent = "Please complete all fields.";
+        status.style.color = "#ffb4b4";
+        return false;
+      }
+      // Simple email validation
+      if(!/^\S+@\S+\.\S+$/.test(email)){
+        status.textContent = "Please enter a valid email.";
+        status.style.color = "#ffb4b4";
+        return false;
+      }
+
+      // Try to open user's email client with prefilled content (mailto)
+      const subject = encodeURIComponent(`Project inquiry from ${name}`);
+      const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
+      const mailto = `mailto:saad@example.com?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+
+      status.textContent = "Opening email client...";
+      status.style.color = "var(--muted)";
+      return false;
+    }
+
+    // Resume download simulated (replace link with real file)
+    document.getElementById('downloadResume').addEventListener('click', function(){
+      // Replace the URL below with the real CV link (PDF)
+      const resumeUrl = 'https://example.com/Saad-Ali-CV.pdf';
+      // open in new tab
+      window.open(resumeUrl, '_blank');
+    });
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <!-- GSAP ScrollTo plugin (loaded dynamically from CDN if needed) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</body>
+</html>
