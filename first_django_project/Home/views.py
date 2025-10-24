@@ -2,7 +2,11 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    context = {
+        "Name":"Saad Ali",
+        "experties": "Senior Website Developer • WordPress , Python django , php & Front end"
+    }
+    return render(request, "index.html", context)
     # return HttpResponse('Hello this is Home Page')
 def about(request):
     return HttpResponse('Hello this is About Page')
