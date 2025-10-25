@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = "Saad Portfolio Admin"
+admin.site.title = "Saad Portfolio Admin Portal"
+admin.site.index_header = "welcome to Saad Portfolio Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Home.urls'))

@@ -12,5 +12,9 @@ def about(request):
     return HttpResponse('Hello this is About Page')
 def services(request):
     return HttpResponse('Hello this is Services Page')
+def skills(request):
+    return HttpResponse('Hello this is Skills Page')
+def experience(request):
+    return HttpResponse('Hello this is Experience Page')
 def contact(request):
     return HttpResponse('Hello this is Contact Page')
