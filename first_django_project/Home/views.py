@@ -9,12 +9,13 @@ def index(request):
     return render(request, "index.html", context)
     # return HttpResponse('Hello this is Home Page')
 def about(request):
-    return HttpResponse('Hello this is About Page')
+    return render(request, "about.html")
 def services(request):
-    return HttpResponse('Hello this is Services Page')
+        return render(request, "services.html")
+
 def skills(request):
-    return HttpResponse('Hello this is Skills Page')
+        return render(request, "skills.html")
 def experience(request):
-    return HttpResponse('Hello this is Experience Page')
+        return render(request, "experience.html")
 def contact(request):
-    return HttpResponse('Hello this is Contact Page')
+        return render(request, "contact.html")
