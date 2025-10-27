@@ -994,6 +994,62 @@ this Code is Written for Contact us Page
 }
 
 
+/* ===========================================
+
+this Code is Written for Alert Boxes 
+
+==============================================*/
+
+
+/* Alert Container */
+.alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Base Alert Box */
+.alert-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-left: 4px solid #00bcd4;
+  animation: fadeIn 0.6s ease;
+  transition: all 0.5s ease;
+}
+
+/* Icon styling */
+.alert-box i {
+  font-size: 18px;
+}
+
+/* Different alert types */
+.alert-success { border-left-color: #4caf50; background: rgba(76, 175, 80, 0.15); }
+.alert-error   { border-left-color: #f44336; background: rgba(244, 67, 54, 0.15); }
+.alert-warning { border-left-color: #ff9800; background: rgba(255, 152, 0, 0.15); }
+.alert-info    { border-left-color: #2196f3; background: rgba(33, 150, 243, 0.15); }
+
+/* Fade In + Out Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
 
 
 

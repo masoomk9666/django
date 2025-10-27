@@ -45,15 +45,15 @@
     </div>
 
     <!-- Form -->
-    <form class="contact-form" data-aos="fade-left">
+    <form class="contact-form" data-aos="fade-left" action="" method="POST">
     {% csrf_token %}
       <h2>Send Me a Message</h2>
       <div class="contact-input-group">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Name" name="name" required />
+        <input type="email" placeholder="Your Email" name="email" required />
       </div>
-      <input type="text" placeholder="Subject" required />
-      <textarea rows="6" placeholder="Your Message" required></textarea>
+      <input type="text" placeholder="Phone" name="phone" required />
+      <textarea rows="6" placeholder="Your Message" name="message" required></textarea>
       <button type="submit" class="contact-btn">Send Message</button>
     </form>
   </section>
