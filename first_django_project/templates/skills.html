@@ -1,4 +1,88 @@
 {% extends "base.html" %}
 
-{% block title %}Skills{% endblock title %}
-{% block body %}Skills {% endblock body %}
+{% block title %}Skills | Saad Ali{% endblock title %}
+{% block body %}
+ <!-- Hero -->
+  <section class="skills-hero">
+    <div class="skills-hero-content" data-aos="fade-up">
+      <h1>My Skills</h1>
+      <p>Crafting exceptional websites with creativity, precision, and powerful tools.</p>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="skills-container">
+    <h2 data-aos="fade-up">Technical Expertise</h2>
+
+    <div class="skills-bars">
+
+      <div class="skills-bar" data-aos="fade-right">
+        <span>WordPress Development</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 95%"></div></div>
+      </div>
+
+      <div class="skills-bar" data-aos="fade-right">
+        <span>Django Python</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 90%"></div></div>
+      </div>
+
+      <div class="skills-bar" data-aos="fade-right" data-aos-delay="100">
+        <span>HTML / CSS / JS</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 90%"></div></div>
+      </div>
+
+      <div class="skills-bar" data-aos="fade-right" data-aos-delay="200">
+        <span>PHP / MySQL</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 85%"></div></div>
+      </div>
+
+      <div class="skills-bar" data-aos="fade-right" data-aos-delay="300">
+        <span>React.js / Next.js</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 75%"></div></div>
+      </div>
+
+      <div class="skills-bar" data-aos="fade-right" data-aos-delay="400">
+        <span>SEO (On-Page & Technical)</span>
+        <div class="skills-progress"><div class="skills-progress-fill" style="width: 95%"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="skills-tools" data-aos="fade-up">
+    <h2>Tools & Technologies</h2>
+    <div class="skills-icons">
+      <div><i class="fab fa-wordpress"></i><p>WordPress</p></div>
+      <div><i class="fab fa-elementor"></i><p>Elementor</p></div>
+      <div><i class="fab fa-php"></i><p>PHP</p></div>
+      <div><i class="fab fa-react"></i><p>React</p></div>
+      <div><i class="fab fa-js-square"></i><p>JavaScript</p></div>
+      <div><i class="fab fa-html5"></i><p>HTML5</p></div>
+      <div><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+      <div><i class="fas fa-search"></i><p>SEO Tools</p></div>
+      <div><i class="fas fa-database"></i><p>MySQL</p></div>
+      <div><i class="fas fa-cogs"></i><p>cPanel</p></div>
+    </div>
+  </section>
+
+  <!-- Soft Skills -->
+  <section class="skills-soft" data-aos="fade-up">
+    <h2>Soft Skills</h2>
+    <ul>
+      <li>Team Leadership & Collaboration</li>
+      <li>Problem Solving & Critical Thinking</li>
+      <li>Creativity & Innovation</li>
+      <li>Time Management</li>
+      <li>Attention to Detail</li>
+    </ul>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="skills-cta" data-aos="zoom-in">
+    <h2>Ready to work together?</h2>
+    <p>I deliver top-quality web solutions — tailored for your goals and audience.</p>
+    <a href="contact.html" class="skills-btn">Let’s Collaborate</a>
+  </section>
+
+{% endblock body %}

@@ -3,211 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Saad Ali — Portfolio {% block title %} {%endblock title%}  </title>
+  <title>{% block title %} {%endblock title%}  </title>
   <meta name="description" content="Saad Ali — Senior Website Developer | WordPress & Technical SEO | Portfolio" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <!-- AOS (Animate on Scroll) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0f13;
-      --card:#0f1620;
-      --muted:#9aa6b2;
-      --accent:#7c5cff;
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.04);
-      --success: #39d98a;
-      --radius: 14px;
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg, rgba(12,16,20,1) 0%, rgba(8,10,12,1) 100%);
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      font-size:16px;
-    }
-
-    /* Container */
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:28px;
-    }
-
-    /* Header (nav) */
-    header{
-      position:sticky;
-      top:12px;
-      z-index:50;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:10px 16px;
-      border-radius:12px;
-      margin-bottom:18px;
-      box-shadow: 0 6px 18px rgba(2,6,12,0.6);
-      backdrop-filter: blur(6px);
-    }
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#45d7ff);
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:#071022;
-      box-shadow: 0 6px 18px rgba(124,92,255,0.18);
-    }
-    nav a{
-      color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600;font-size:14px;
-    }
-    nav a:hover{color:var(--accent)}
-
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:32px;
-      align-items:center;
-      margin:28px 0 46px;
-    }
-    .hero-card{
-      background:linear-gradient(180deg,var(--card), rgba(10,14,18,0.6));
-      padding:30px;
-      border-radius:var(--radius);
-      box-shadow: 0 8px 30px rgba(2,6,12,0.7);
-      border:1px solid rgba(255,255,255,0.03);
-    }
-    .hero h1{
-      font-size:34px;margin:0 0 6px;
-      letter-spacing:-0.6px;
-    }
-    .hero .subtitle{color:var(--muted);margin-bottom:18px}
-    .hero .cta{
-      display:flex;gap:12px;flex-wrap:wrap;
-    }
-    .btn{
-      background:linear-gradient(90deg,var(--accent),#45d7ff);
-      color:#071022;padding:12px 16px;border-radius:12px;font-weight:700;border:none;cursor:pointer;
-      box-shadow: 0 6px 18px rgba(124,92,255,0.14);
-    }
-    .btn.ghost{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);
-      padding:11px 14px;border-radius:12px;
-    }
-
-    .hero-meta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .meta-item{
-      background:var(--glass);padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);
-      font-size:13px;
-    }
-
-    .hero-photo{
-      display:flex;align-items:center;justify-content:center;
-    }
-    .photo-wrap{
-      width:260px;height:260px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);
-      box-shadow: 0 18px 40px rgba(2,6,12,0.7);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      display:flex;align-items:center;justify-content:center;
-    }
-    .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-
-    /* Sections */
-    section.card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
-      border-radius: var(--radius);
-      padding:22px;
-      margin-bottom:22px;
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 8px 30px rgba(2,6,12,0.45);
-    }
-    .section-title{
-      display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;
-    }
-    .section-title h2{margin:0;font-size:18px}
-    .muted{color:var(--muted);font-size:14px}
-
-    /* About */
-    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
-    .about p{color:var(--muted);margin-top:8px}
-
-    /* Skills */
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{
-      background:var(--glass-2);padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);font-size:14px;
-    }
-    .skill .level{display:inline-block;margin-left:8px;font-weight:700;color:var(--accent)}
-
-    /* Portfolio grid */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .project{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
-      display:flex;gap:12px;align-items:center;
-    }
-    .project .img{width:90px;height:72px;border-radius:10px;overflow:hidden;flex-shrink:0}
-    .project .img img{width:100%;height:100%;object-fit:cover}
-    .project h4{margin:0;font-size:15px}
-    .project p{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    /* Experience & Education */
-    .timeline{display:flex;flex-direction:column;gap:12px}
-    .t-item{padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
-    .t-item small{color:var(--muted)}
-
-    /* Testimonials */
-    .testimonials{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
-    .testimonial{
-      min-width:280px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;
-      border:1px solid rgba(255,255,255,0.03)
-    }
-    .testimonial p{color:var(--muted);font-size:14px;margin:8px 0 0}
-    .stars{color:var(--accent);font-weight:800}
-
-    /* Blog preview */
-    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .post{
-      padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)
-    }
-    .post h5{margin:4px 0 0;font-size:14px}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    form label{display:block;font-size:14px;margin-bottom:6px;color:var(--muted)}
-    input[type="text"], input[type="email"], textarea{
-      width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
-      background:transparent;color:inherit;font-size:14px;resize:vertical;
-    }
-    .small{font-size:13px;color:var(--muted);margin-top:8px}
-
-    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .about-grid{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      .posts{grid-template-columns:1fr 1fr}
-      .container{padding:16px}
-      header{flex-direction:column;align-items:flex-start;gap:8px}
-    }
-    @media (max-width:560px){
-      .posts{grid-template-columns:1fr}
-      .hero h1{font-size:28px}
-      .photo-wrap{width:200px;height:200px}
-      .hero-card{padding:20px}
-    }
-  </style>
+  <link href="/static/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -223,6 +25,7 @@
       </div>
 
       <nav aria-label="Main navigation" >
+        <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/services">Services</a>
         <a href="/skills">Skills</a>
@@ -254,7 +57,7 @@
     AOS.init({
       duration: 700,
       easing: 'ease-out-quart',
-      once: true
+      once: false
     });
 
     // GSAP subtle hero entrance

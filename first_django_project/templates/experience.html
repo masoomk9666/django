@@ -1,4 +1,103 @@
 {% extends "base.html" %}
 
-{% block title %}Experience{% endblock title %}
-{% block body %}This is Experience page Body Block {% endblock body %}
+{% block title %}Experience | Saad Ali{% endblock title %}
+{% block body %}
+<!-- Hero -->
+  <section class="exp-hero">
+    <div class="exp-hero-content" data-aos="fade-up">
+      <h1>Experience & Education</h1>
+      <p>My professional journey, achievements, and continuous growth in technology.</p>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="exp-work">
+    <h2 data-aos="fade-up">Professional Experience</h2>
+    <div class="exp-timeline">
+
+      <div class="exp-item" data-aos="fade-right">
+        <div class="exp-content">
+          <h3>Senior WordPress Developer <span>@ Softcrust</span></h3>
+          <span class="exp-date">2023 – Present</span>
+          <p>Developing and managing multiple WordPress projects simultaneously. Responsible for on-page SEO, server management (cPanel), and optimizing website performance with clean and secure code.</p>
+        </div>
+      </div>
+
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="exp-content">
+          <h3>Freelance Developer <span>@ Fiverr & Upwork</span></h3>
+          <span class="exp-date">2021 – 2023</span>
+          <p>Delivered 100+ successful projects for international clients including website design, custom WordPress themes, and eCommerce optimization. Known for providing unlimited revisions and top client satisfaction.</p>
+        </div>
+      </div>
+
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="exp-content">
+          <h3>Founder <span>@ The Craft Universe</span></h3>
+          <span class="exp-date">2022 – Present</span>
+          <p>Built and launched digital tools like PDF Merger and creative product stores under The Craft Universe brand, focusing on user experience and SEO optimization.</p>
+        </div>
+      </div>
+
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="300">
+        <div class="exp-content">
+          <h3>Founder <span>@ Tour4You</span></h3>
+          <span class="exp-date">2021 – 2022</span>
+          <p>Developed an Android app for tourism management with modules for hotel booking, transport, maps, and tour packages — designed to help tourists plan reliable tours.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="exp-education" data-aos="fade-up">
+    <h2>Education</h2>
+    <div class="exp-edu-container">
+
+      <div class="exp-edu-item">
+        <i class="fas fa-graduation-cap"></i>
+        <div>
+          <h3>Bachelor of Science in Software Engineering</h3>
+          <p>University of Swat — CGPA: 3.79/4.00</p>
+          <span>2019 – 2023</span>
+          <ul>
+            <li>Received 5 merit-based scholarships</li>
+            <li>1st position in 1 semester, 2nd position in 4 semesters</li>
+            <li>Member of Adventure & Hike Society and College Football Team</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications / Achievements -->
+  <section class="exp-certifications" data-aos="fade-up">
+    <h2>Certifications & Achievements</h2>
+    <div class="exp-cert-grid">
+      <div class="exp-cert-item">
+        <i class="fas fa-award"></i>
+        <h3>Google Analytics Certified</h3>
+        <p>Proficient in website traffic analysis and conversion tracking.</p>
+      </div>
+      <div class="exp-cert-item">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Front-End Web Development</h3>
+        <p>Completed hands-on projects using HTML, CSS, JS, and React.js.</p>
+      </div>
+      <div class="exp-cert-item">
+        <i class="fas fa-search"></i>
+        <h3>SEO Specialist Training</h3>
+        <p>Skilled in On-Page and Technical SEO optimization for WordPress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="exp-cta" data-aos="zoom-in">
+    <h2>Let’s Build Something Great Together</h2>
+    <p>Bringing experience, innovation, and technical precision to every project.</p>
+    <a href="contact.html" class="exp-btn">Hire Me</a>
+  </section>
+{% endblock body %}

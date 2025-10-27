@@ -1,4 +1,65 @@
 {% extends "base.html" %}
 
-{% block title %}About{% endblock title %}
-{% block body %}This is about page Body Block {% endblock body %}
+{% block title %}About Me | Saad Ali{% endblock title %}
+{% block body %}
+<!-- About Section -->
+  <section class="about-section about-container" data-aos="fade-up">
+    <div class="about-image">
+      <img src="/static/img/1.png" alt="Saad Ali">
+    </div>
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>
+        I’m <strong>Saad Ali</strong>, a passionate <strong>WordPress Developer</strong> and 
+        <strong>On-Page & Technical SEO Expert</strong> with over 2 years of experience building
+        modern, high-performance websites. I currently work as a 
+        <strong>Senior Website Developer at Softcrust</strong>, handling multiple WordPress projects, 
+        custom development, Cpanel management, and SEO optimization.
+      </p>
+      <p>
+        I love combining creativity with technology — building user-friendly designs,
+        integrating animations, and optimizing for performance & visibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="about-education about-container" data-aos="fade-up">
+    <h2>Education</h2>
+    <div class="about-timeline">
+      <div class="about-timeline-item">
+        <h3>BS Software Engineering</h3>
+        <p><strong>University of Swat</strong> — CGPA 3.79/4</p>
+        <p>5 Merit-based scholarships, 1st position in one semester, 2nd in four semesters.</p>
+      </div>
+      <div class="about-timeline-item">
+        <h3>High School & FSC</h3>
+        <p>Scored 815 marks in 10th and 717 marks in FSC.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="about-experience about-container" data-aos="fade-up">
+    <h2>Professional Experience</h2>
+    <div class="about-experience-item">
+      <h3>Senior WordPress Developer — Softcrust</h3>
+      <p>Managing multiple client projects simultaneously, building custom WordPress solutions, handling SEO, and managing hosting environments (Cpanel, DNS, SSL, etc.).</p>
+    </div>
+    <div class="about-experience-item">
+      <h3>Founder — The Craft Universe & Tour4You</h3>
+      <p>Built startups focusing on creative digital tools and tourism solutions, including a tour booking Android app “Tour4You.”</p>
+    </div>
+  </section>
+
+  <!-- Interests Section -->
+  <section class="about-interests about-container" data-aos="fade-up">
+    <h2>Hobbies & Interests</h2>
+    <ul class="about-interests-list">
+      <li>Football (College Team Member ⚽)</li>
+      <li>Adventure & Hiking (Member of Adventure Society)</li>
+      <li>AI & Machine Learning Research</li>
+      <li>Exploring new web technologies</li>
+    </ul>
+  </section>
+{% endblock body %}

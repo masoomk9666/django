@@ -1,4 +1,67 @@
 {% extends "base.html" %}
 
 {% block title %}Contact{% endblock title %}
-{% block body %}This is Contact page Body Block {% endblock body %}
+{% block body %}
+<!-- Hero -->
+  <section class="contact-hero">
+    <div class="contact-hero-content" data-aos="fade-up">
+      <h1>Let’s Work Together</h1>
+      <p>Have a project in mind or just want to say hello? I’d love to hear from you!</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-container">
+    <div class="contact-info" data-aos="fade-right">
+      <h2>Get In Touch</h2>
+      <p>I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:saadali@gmail.com">saadali@gmail.com</a></p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Location</h3>
+          <p>Swat, Pakistan</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <h3>Phone</h3>
+          <p><a href="tel:+923001234567">+92 300 123 4567</a></p>
+        </div>
+      </div>
+
+      <div class="contact-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form class="contact-form" data-aos="fade-left">
+    {% csrf_token %}
+      <h2>Send Me a Message</h2>
+      <div class="contact-input-group">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <input type="text" placeholder="Subject" required />
+      <textarea rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- CTA -->
+  <section class="contact-cta" data-aos="zoom-in">
+    <h2>Looking for a reliable developer?</h2>
+    <p>I deliver professional and creative website solutions tailored to your goals.</p>
+    <a href="mailto:saadk9666@gmail.com" class="contact-btn">Let’s Connect</a>
+  </section>
+{% endblock body %}

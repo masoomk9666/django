@@ -1,4 +1,66 @@
 {% extends "base.html" %}
 
-{% block title %}Services{% endblock title %}
-{% block body %}This is Services page Body Block {% endblock body %}
+{% block title %}Services | Saad Ali{% endblock title %}
+{% block body %}
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="services-hero-content" data-aos="fade-up">
+      <h1>My Services</h1>
+      <p>Building stunning, optimized, and high-performance websites with creativity and precision.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-container">
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-wordpress-simple"></i>
+        <h3>WordPress Development</h3>
+        <p>Custom WordPress websites with pixel-perfect designs, responsive layouts, and optimized performance.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-search"></i>
+        <h3>On-Page & Technical SEO</h3>
+        <p>Boost your visibility with advanced on-page and technical SEO strategies, ensuring faster rankings.</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-tools"></i>
+        <h3>Website Maintenance</h3>
+        <p>Keep your site secure, updated, and running smoothly with regular backups, updates, and fixes.</p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-code"></i>
+        <h3>Custom Web Solutions</h3>
+        <p>From dynamic landing pages to API integrations — tailored solutions built for your business goals.</p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="500">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Digital Marketing</h3>
+        <p>Comprehensive strategies to grow your brand with targeted campaigns and audience engagement.</p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="services-card" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Web Animation & UX</h3>
+        <p>Engage visitors with GSAP-powered animations, smooth transitions, and an enhanced user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="services-cta" data-aos="zoom-in">
+    <h2>Have a project in mind?</h2>
+    <p>Let’s build something amazing together. I offer unlimited revisions until you’re 100% satisfied.</p>
+    <a href="contact.html" class="services-btn">Get In Touch</a>
+  </section>
+{% endblock body %}
